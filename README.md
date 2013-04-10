@@ -1,18 +1,29 @@
 
 # Secret Santa Assigner
 
-Reads a list of friends from the standard input and renders to a specified
-output file (see --help) all assignments of gift givers and their corresponding
-receivers encoded in a QR-Code.
+Reads a list of friends from the standard input (or a file) and renders to a
+specified output file (or "output.pdf" if not specified) all assignments of
+gift givers and their corresponding receivers encoded in a QR-Code (see --help
+for options).
 
-## Requisites
+## Installation
 
- * [Haskell](http://haskell.org)
- * [Diagrams](http://projects.haskell.org/diagrams/)
+To build and install you will need Haskell's
+[Cabal](http://www.haskell.org/cabal/), then just do:
 
-## Example usage:
+    $ cabal install
 
-    $ runhaskell secret.hs -o output.pdf << EOF
+It will automatically download the dependencies, compile, and install the
+executable `secret-santa` in the Cabal bin path (most likely `~/.cabal/bin`).
+
+## Example usage
+
+    $ secret-santa -h
+    Usage: secret-santa [OPTION...]
+      -o FILE  --output=FILE    output FILE
+      -i FILE  --input=FILE     input FILE
+      -h       --help, --usage  This help message
+    $ secret-santa -o output.pdf << EOF
     Charlotte
     Grayson
     Elliot
@@ -20,7 +31,7 @@ receivers encoded in a QR-Code.
     Willian
     EOF
 
-### Output
+### Example output
 
 ![Image](example.png)
 
