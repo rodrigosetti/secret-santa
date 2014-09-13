@@ -1,6 +1,8 @@
 
 # Secret Santa Assigner
 
+[![Build Status](https://travis-ci.org/rodrigosetti/secret-santa.svg?branch=master)](https://travis-ci.org/rodrigosetti/secret-santa)
+
 Reads a list of friends from the standard input (or a file) and renders to a
 specified output file (or "output.pdf" if not specified) all assignments of
 gift givers and their corresponding receivers encoded in a QR-Code (see --help
